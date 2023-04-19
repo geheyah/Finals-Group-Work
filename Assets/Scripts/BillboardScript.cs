@@ -12,7 +12,7 @@ public class BillboardScript : MonoBehaviour
     private Vector3 originalRotation;
 
     public enum BillboardType { LookAtCamera, CameraForward };
-    z
+    
     private void Awake()
     {
         originalRotation = transform.rotation.eulerAngles;
