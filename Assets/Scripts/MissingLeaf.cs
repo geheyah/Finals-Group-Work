@@ -35,6 +35,9 @@ public class MissingLeaf : MonoBehaviour
             // Check if the player presses the E key while in range
             if (Input.GetKeyDown(KeyCode.E))
             {
+                // Increase the missingLeaves count in the PlayerProperties script
+                PlayerProperties.instance.missingLeaves++;
+
                 // Destroy the object and perform any other necessary actions
                 Destroy(gameObject);
             }
