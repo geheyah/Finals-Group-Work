@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Type1enemyScript : MonoBehaviour
 {
@@ -8,101 +10,88 @@ public class Type1enemyScript : MonoBehaviour
     private float health;
     public float maxHealth;
 
-    //movements
-    public float speed; //enemy movement speed
-    public float raycastDistance; // set the maximum distance of the raycast
-    private bool followingPlayer = false;
-    private Transform playerTransform;
-    public float distance;
+    // Movements
+    public float speed; // Enemy movement speed
+    public float raycastDistance; // Set the maximum distance of the raycast
+    public Transform player; // Add player here
+    private float startPosition;
+    public float travelDistance;
 
+    // Attacks
+    public GameObject enemyAttack_01Prefab; // Prefab of enemy attack
 
-    //attacks
-    public GameObject enemyAttack_01Prefab; // prefab of enemy attack
+    private bool isFollowingPlayer = false;
 
     void Start()
     {
         health = maxHealth;
-
+        startPosition = transform.position.x;
     }
 
-    void FixedUpdate()
+    void Update()
     {
-
         enemySight();
-
-        //just need movement here
+        if (isFollowingPlayer)
+        {
+            enemyAgro();
+        }
+        else
+        {
+            patrolMovement();
+        }
     }
-
 
     void enemySight()
     {
-
-
         // Cast ray to the left
-        Vector3 raycastDirection = Vector3.left;
+        Vector3 leftraycastDirection = Vector3.left;
+        Vector3 righttraycastDirection = Vector3.right;
         RaycastHit hitInfo;
         Vector3 raycastOrigin = transform.position;
+        Debug.DrawRay(raycastOrigin, leftraycastDirection * raycastDistance, Color.red);
+        Debug.DrawRay(raycastOrigin, righttraycastDirection * raycastDistance, Color.red);
 
-        bool playerInSight = false; //to check if player is in sight
-        if (Physics.Raycast(raycastOrigin, raycastDirection, out hitInfo, raycastDistance))
+        if (Physics.Raycast(raycastOrigin, leftraycastDirection, out hitInfo, raycastDistance))
         {
             // Check if the raycast hits a player
             if (hitInfo.collider.CompareTag("Player"))
             {
-                // Follow the player
-                followingPlayer = true;
-                playerTransform = hitInfo.collider.transform;
-                playerInSight = true; // set playerInSight to true if player is hit by the raycast
+                isFollowingPlayer = true;
+                Debug.Log("left detected");
             }
         }
-        // Draw a ray for visualization
-        Debug.DrawRay(raycastOrigin, raycastDirection * raycastDistance, Color.red);
-
-        //Cast ray to the right
-        raycastDirection = Vector3.right;
-        if (Physics.Raycast(raycastOrigin, raycastDirection, out hitInfo, raycastDistance))
+        else
+        {
+            isFollowingPlayer = false;
+        }
+     
+        if (Physics.Raycast(raycastOrigin, righttraycastDirection, out hitInfo, raycastDistance))
         {
             // Check if the raycast hits a player
             if (hitInfo.collider.CompareTag("Player"))
             {
-                // Follow the player
-                followingPlayer = true;
-                playerTransform = hitInfo.collider.transform;
-                playerInSight = true; // set playerInSight to true if player is hit by the raycast
-            }
-        }
-        // Draw a ray for visualization
-        Debug.DrawRay(raycastOrigin, raycastDirection * raycastDistance, Color.red);
-
-        if (followingPlayer && playerInSight) // only follow player if followingPlayer is true and player is in sight
-        {
-            // Move towards the player
-            transform.position = Vector3.MoveTowards(transform.position, playerTransform.position, speed * Time.deltaTime);
-
-            // Cast ray towards player to check if player is still in line of sight
-            Vector3 directionToPlayer = playerTransform.position - transform.position;
-            if (Physics.Raycast(transform.position, directionToPlayer, out hitInfo, raycastDistance))
-            {
-                if (hitInfo.collider.CompareTag("Player"))
-                {
-                    // Player is still in line of sight
-                    followingPlayer = true;
-                    playerInSight = true;
-                }
-                else
-                {
-                    // Player is not in line of sight, stop following
-                    followingPlayer = false;
-                    playerInSight = false;
-                }
-            }
-            else
-            {
-                // Player is not in line of sight, stop following
-                followingPlayer = false;
-                playerInSight = false;
+                Debug.Log("right detected");
+                isFollowingPlayer = true;
             }
         }
     }
-}
 
+    void enemyAgro()
+    {
+        float stoppingDistance = 1.5f; // Adjust this value to change the distance between enemy and player
+        Vector3 targetPosition = player.position + (transform.position - player.position).normalized * stoppingDistance;
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
+        Debug.Log("Following player");
+    }
+
+    void patrolMovement()
+    {
+        // Calculate the horizontal movement based on a sine wave
+        float movement = Mathf.Sin(Time.time * speed) * travelDistance;
+        // Calculate the direction to move based on the sine wave
+        Vector3 direction = new Vector3(movement, 0f, 0f);
+        // Move the enemy in the calculated direction
+        transform.position += direction * speed * Time.deltaTime;
+        Debug.Log("Patrolling");
+    }
+}
