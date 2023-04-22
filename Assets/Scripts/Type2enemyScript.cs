@@ -1,13 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Type2enemyScript : MonoBehaviour
 {
-    //enemy stats
-    private float health;
-    public float maxHealth;
-
     // Movements
     public float speed; // Enemy movement speed
     public float raycastDistance; // Set the maximum distance of the raycast
@@ -19,11 +13,10 @@ public class Type2enemyScript : MonoBehaviour
     // Attacks
     public GameObject enemyAttack_01Prefab; // Prefab of enemy attack
 
-    
+
 
     void Start()
     {
-        health = maxHealth;
         startPosition = transform.position.x;
     }
 
