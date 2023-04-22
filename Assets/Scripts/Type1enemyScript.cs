@@ -1,7 +1,15 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Type1enemyScript : MonoBehaviour
 {
+    //enemy stats
+    private float health;
+    public float maxHealth;
+
     // Movements
     public float speed; // Enemy movement speed
     public float raycastDistance; // Set the maximum distance of the raycast
@@ -16,6 +24,7 @@ public class Type1enemyScript : MonoBehaviour
 
     void Start()
     {
+        health = maxHealth;
         startPosition = transform.position.x;
     }
 
@@ -55,7 +64,7 @@ public class Type1enemyScript : MonoBehaviour
         {
             isFollowingPlayer = false;
         }
-
+     
         if (Physics.Raycast(raycastOrigin, righttraycastDirection, out hitInfo, raycastDistance))
         {
             // Check if the raycast hits a player
@@ -83,5 +92,6 @@ public class Type1enemyScript : MonoBehaviour
         Vector3 direction = new Vector3(movement, 0f, 0f);
         // Move the enemy in the calculated direction
         transform.position += direction * speed * Time.deltaTime;
+        Debug.Log("Patrolling");
     }
 }
