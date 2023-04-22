@@ -23,7 +23,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("Enemy died.");
+        Debug.Log("Enemy Unalived");
         Destroy(gameObject);
     }
 }
