@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BillboardScript : MonoBehaviour
+public class Billboard : MonoBehaviour
 {
     [SerializeField] private BillboardType billboardType;
 
@@ -12,6 +12,7 @@ public class BillboardScript : MonoBehaviour
     private Vector3 originalRotation;
 
     public enum BillboardType { LookAtCamera, CameraForward };
+
     private void Awake()
     {
         originalRotation = transform.rotation.eulerAngles;
@@ -40,3 +41,5 @@ public class BillboardScript : MonoBehaviour
         transform.rotation = Quaternion.Euler(rotation);
     }
 }
+
+
