@@ -10,14 +10,13 @@ public class Type2enemyScript : MonoBehaviour
 
     // Movements
     public float speed; // Enemy movement speed
-    public float raycastDistance; // Set the maximum distance of the raycast
+    public float enemySightRange; // Set the maximum distance of the raycast
     public Transform player; // Add player here
     private float startPosition;
     public float travelDistance;
     private bool isFollowingPlayer = false;
 
-    // Attacks
-    public GameObject enemyAttack_01Prefab; // Prefab of enemy attack
+
 
     
 
@@ -42,14 +41,15 @@ public class Type2enemyScript : MonoBehaviour
     {
         // Cast ray to the left
         Vector3 leftraycastDirection = Vector3.left;
+        // Cast ray to the right
         Vector3 righttraycastDirection = Vector3.right;
         RaycastHit hitInfo;
         Vector3 raycastOrigin = transform.position;
 
-        Debug.DrawRay(raycastOrigin, leftraycastDirection * raycastDistance, Color.red);
-        Debug.DrawRay(raycastOrigin, righttraycastDirection * raycastDistance, Color.red);
+        Debug.DrawRay(raycastOrigin, leftraycastDirection * enemySightRange, Color.red);
+        Debug.DrawRay(raycastOrigin, righttraycastDirection * enemySightRange, Color.red);
 
-        if (Physics.Raycast(raycastOrigin, leftraycastDirection, out hitInfo, raycastDistance))
+        if (Physics.Raycast(raycastOrigin, leftraycastDirection, out hitInfo, enemySightRange))
         {
             // Check if the raycast hits a player
             if (hitInfo.collider.CompareTag("Player"))
@@ -67,7 +67,7 @@ public class Type2enemyScript : MonoBehaviour
 
         }
 
-        if (Physics.Raycast(raycastOrigin, righttraycastDirection, out hitInfo, raycastDistance))
+        if (Physics.Raycast(raycastOrigin, righttraycastDirection, out hitInfo, enemySightRange))
         {
             // Check if the raycast hits a player
             if (hitInfo.collider.CompareTag("Player"))
