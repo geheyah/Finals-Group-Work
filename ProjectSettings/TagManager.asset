@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - note_1
+  - note_2
+  - note_3
+  - note_4
+  - Activator
   layers:
   - Default
   - TransparentFX

@@ -5,13 +5,11 @@ public class Type1enemyScript : MonoBehaviour
 
     // Movements
     public float speed; // Enemy movement speed
-    public float raycastDistance; // Set the maximum distance of the raycast
+    public float enemySightRange; // Set the maximum distance of the raycast
     public Transform player; // Add player here
     private float startPosition;
     public float travelDistance;
 
-    // Attacks
-    public GameObject enemyAttack_01Prefab; // Prefab of enemy attack
 
     private bool isFollowingPlayer = false;
 
@@ -35,37 +33,66 @@ public class Type1enemyScript : MonoBehaviour
 
     void enemySight()
     {
-        // Cast ray to the left
-        Vector3 leftraycastDirection = Vector3.left;
-        Vector3 righttraycastDirection = Vector3.right;
         RaycastHit hitInfo;
         Vector3 raycastOrigin = transform.position;
-        Debug.DrawRay(raycastOrigin, leftraycastDirection * raycastDistance, Color.red);
-        Debug.DrawRay(raycastOrigin, righttraycastDirection * raycastDistance, Color.red);
 
-        if (Physics.Raycast(raycastOrigin, leftraycastDirection, out hitInfo, raycastDistance))
+        Vector3 leftraycastDirection = Vector3.left; // Cast ray to the left     
+        Vector3 righttraycastDirection = Vector3.right; //cast ray to the right
+        Vector3 backtraycastDirection = Vector3.back; //cast ray to the back
+        Vector3 forwardtraycastDirection = Vector3.forward; //cast ray to the forward
+
+        //left raycast
+        if (Physics.Raycast(raycastOrigin, leftraycastDirection, out hitInfo, enemySightRange))
         {
             // Check if the raycast hits a player
             if (hitInfo.collider.CompareTag("Player"))
             {
-                isFollowingPlayer = true;
                 Debug.Log("left detected");
+                isFollowingPlayer = true; //set the isFollowingPlayer to true and start enemyAgro
             }
         }
+        //back raycast
+        else if (Physics.Raycast(raycastOrigin, backtraycastDirection, out hitInfo, enemySightRange))
+        {
+            if (hitInfo.collider.CompareTag("Player")) // Check if the raycast hits a player
+            {
+                Debug.Log("right detected"); //set the isFollowingPlayer to true and start enemyAgro
+                isFollowingPlayer = true;
+            }
+        }
+
+        //right raycast
+        else if (Physics.Raycast(raycastOrigin, righttraycastDirection, out hitInfo, enemySightRange))
+        {
+            if (hitInfo.collider.CompareTag("Player")) // Check if the raycast hits a player
+            {
+                Debug.Log("right detected"); //set the isFollowingPlayer to true and start enemyAgro
+                isFollowingPlayer = true;
+            }
+        }
+
+        //forward raycast
+        else if (Physics.Raycast(raycastOrigin, forwardtraycastDirection, out hitInfo, enemySightRange))
+        {
+
+            if (hitInfo.collider.CompareTag("Player"))   // Check if the raycast hits a player
+            {
+
+                Debug.Log("right detected");
+                isFollowingPlayer = true;   //set the isFollowingPlayer to true and start enemyAgro
+            }
+        }
+
         else
         {
             isFollowingPlayer = false;
         }
 
-        if (Physics.Raycast(raycastOrigin, righttraycastDirection, out hitInfo, raycastDistance))
-        {
-            // Check if the raycast hits a player
-            if (hitInfo.collider.CompareTag("Player"))
-            {
-                Debug.Log("right detected");
-                isFollowingPlayer = true;
-            }
-        }
+        Debug.DrawRay(raycastOrigin, leftraycastDirection * enemySightRange, Color.red);
+        Debug.DrawRay(raycastOrigin, righttraycastDirection * enemySightRange, Color.red);
+        Debug.DrawRay(raycastOrigin, backtraycastDirection * enemySightRange, Color.red);
+        Debug.DrawRay(raycastOrigin, forwardtraycastDirection * enemySightRange, Color.red);
+
     }
 
     void enemyAgro()
@@ -81,7 +108,7 @@ public class Type1enemyScript : MonoBehaviour
         // Calculate the horizontal movement based on a sine wave
         float movement = Mathf.Sin(Time.time * speed) * travelDistance;
         // Calculate the direction to move based on the sine wave
-        Vector3 direction = new Vector3(movement, 0f, 0f);
+        Vector3 direction = new Vector3(movement, 0f,0f);;
         // Move the enemy in the calculated direction
         transform.position += direction * speed * Time.deltaTime;
     }

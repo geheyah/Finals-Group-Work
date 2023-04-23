@@ -2,22 +2,16 @@ using UnityEngine;
 
 public class Type2enemyScript : MonoBehaviour
 {
+
     // Movements
     public float speed; // Enemy movement speed
-    public float raycastDistance; // Set the maximum distance of the raycast
+    public float enemySightRange; // Set the maximum distance of the raycast
     public Transform player; // Add player here
-    private float startPosition;
-    public float travelDistance;
     private bool isFollowingPlayer = false;
-
-    // Attacks
-    public GameObject enemyAttack_01Prefab; // Prefab of enemy attack
-
-
 
     void Start()
     {
-        startPosition = transform.position.x;
+       
     }
 
     void Update()
@@ -33,43 +27,65 @@ public class Type2enemyScript : MonoBehaviour
 
     void enemySight()
     {
-        // Cast ray to the left
-        Vector3 leftraycastDirection = Vector3.left;
-        Vector3 righttraycastDirection = Vector3.right;
         RaycastHit hitInfo;
         Vector3 raycastOrigin = transform.position;
 
-        Debug.DrawRay(raycastOrigin, leftraycastDirection * raycastDistance, Color.red);
-        Debug.DrawRay(raycastOrigin, righttraycastDirection * raycastDistance, Color.red);
+        Vector3 leftraycastDirection = Vector3.left;         // Cast ray to the left
+        Vector3 righttraycastDirection = Vector3.right;      // Cast ray to the right
+        Vector3 forwardtraycastDirection = Vector3.forward;  // Cast ray to the forward
+        Vector3 backtraycastDirection = Vector3.back;        // Cast ray to the back
 
-        if (Physics.Raycast(raycastOrigin, leftraycastDirection, out hitInfo, raycastDistance))
+        //left raycast
+        if (Physics.Raycast(raycastOrigin, leftraycastDirection, out hitInfo, enemySightRange))
         {
             // Check if the raycast hits a player
             if (hitInfo.collider.CompareTag("Player"))
-            {
-                //set the isFollowingPlayer to true and start enemyAgro
-                isFollowingPlayer = true;
+            {        
                 Debug.Log("left detected");
+                isFollowingPlayer = true; //set the isFollowingPlayer to true and start enemyAgro
             }
         }
+        //back raycast
+        else if (Physics.Raycast(raycastOrigin, backtraycastDirection, out hitInfo, enemySightRange))
+        {       
+            if (hitInfo.collider.CompareTag("Player")) // Check if the raycast hits a player
+            {               
+                Debug.Log("right detected"); //set the isFollowingPlayer to true and start enemyAgro
+                isFollowingPlayer = true;
+            }
+        }
+
+        //right raycast
+        else if (Physics.Raycast(raycastOrigin, righttraycastDirection, out hitInfo, enemySightRange))
+        {      
+            if (hitInfo.collider.CompareTag("Player")) // Check if the raycast hits a player
+            {
+                Debug.Log("right detected"); //set the isFollowingPlayer to true and start enemyAgro
+                isFollowingPlayer = true;
+            }
+        }
+
+        //forward raycast
+        else if (Physics.Raycast(raycastOrigin, forwardtraycastDirection, out hitInfo, enemySightRange))
+        {
+ 
+            if (hitInfo.collider.CompareTag("Player"))   // Check if the raycast hits a player
+            {
+
+                Debug.Log("right detected");
+                isFollowingPlayer = true;   //set the isFollowingPlayer to true and start enemyAgro
+            }
+        }
+
         else
         {
-            //if not player is not getting detected return isFollowingPlayer to false and stop following player
             isFollowingPlayer = false;
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(startPosition, transform.position.y, transform.position.z), speed * Time.deltaTime);
-
         }
 
-        if (Physics.Raycast(raycastOrigin, righttraycastDirection, out hitInfo, raycastDistance))
-        {
-            // Check if the raycast hits a player
-            if (hitInfo.collider.CompareTag("Player"))
-            {
-                //set the isFollowingPlayer to true and start enemyAgro
-                Debug.Log("right detected");
-                isFollowingPlayer = true;
-            }
-        }
+        Debug.DrawRay(raycastOrigin, leftraycastDirection * enemySightRange, Color.red);
+        Debug.DrawRay(raycastOrigin, righttraycastDirection * enemySightRange, Color.red);
+        Debug.DrawRay(raycastOrigin, forwardtraycastDirection * enemySightRange, Color.red);
+        Debug.DrawRay(raycastOrigin, backtraycastDirection * enemySightRange, Color.red);
     }
 
     void enemyAgro()
@@ -79,5 +95,5 @@ public class Type2enemyScript : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
         Debug.Log("Following player");
     }
-}
 
+}
