@@ -6,7 +6,6 @@ public class BeatScrollerScript : MonoBehaviour
 {
     public GameObject[] notes;
     public Transform[] spawnPoints;
-    public float beatTempo;
     public bool hasStarted;
 
     public float spawnInterval; // The time between spawns
@@ -16,21 +15,13 @@ public class BeatScrollerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        beatTempo = beatTempo / 60f;
         timeSinceLastSpawn = spawnInterval;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!hasStarted)
-        {
-            if (Input.anyKeyDown)
-            {
-                hasStarted = true;
-            }
-        }
-        else
+        if (hasStarted)
         {
             // Update the time since last spawn
             timeSinceLastSpawn += Time.deltaTime;
@@ -42,34 +33,32 @@ public class BeatScrollerScript : MonoBehaviour
                 timeSinceLastSpawn = 0f;
             }
         }
+
     }
 
     // Spawn a note at a random spawn point
     void SpawnNote()
     {
-        int randomNoteIndex = Random.Range(0, notes.Length);
-        GameObject newNote = Instantiate(notes[randomNoteIndex], Vector3.zero, Quaternion.identity);
+            int randomNoteIndex = Random.Range(0, notes.Length);
+            GameObject newNote = Instantiate(notes[randomNoteIndex], Vector3.zero, Quaternion.identity);
 
-        // Check the tag of the note and spawn it at the corresponding spawn point
-        if (newNote.CompareTag("note_1"))
-        {
-            newNote.transform.position = spawnPoints[0].position;
-        }
-        else if (newNote.CompareTag("note_2"))
-        {
-            newNote.transform.position = spawnPoints[1].position;
-        }
-        else if (newNote.CompareTag("note_3"))
-        {
-            newNote.transform.position = spawnPoints[2].position;
-        }
-        else if (newNote.CompareTag("note_4"))
-        {
-            newNote.transform.position = spawnPoints[3].position;
-        }
-
-        // Set the velocity of the note based on the beat tempo
-        newNote.GetComponent<Rigidbody>().velocity = new Vector2(0, beatTempo * Time.deltaTime);
+            // Check the tag of the note and spawn it at the corresponding spawn point
+            if (newNote.CompareTag("note_1"))
+            {
+                newNote.transform.position = spawnPoints[0].position;
+            }
+            else if (newNote.CompareTag("note_2"))
+            {
+                newNote.transform.position = spawnPoints[1].position;
+            }
+            else if (newNote.CompareTag("note_3"))
+            {
+                newNote.transform.position = spawnPoints[2].position;
+            }
+            else if (newNote.CompareTag("note_4"))
+            {
+                newNote.transform.position = spawnPoints[3].position;
+            }
     }
 
 }

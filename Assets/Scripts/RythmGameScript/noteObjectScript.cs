@@ -7,11 +7,12 @@ public class noteObjectScript : MonoBehaviour
     public float speed;
     public bool canBePressed;
 
+
     public KeyCode keyToPress;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -24,6 +25,8 @@ public class noteObjectScript : MonoBehaviour
             if(canBePressed)
             {
                 gameObject.SetActive(false);
+
+                RythmGameManager.instance.noteHit();
             }
         }
     }
@@ -32,7 +35,7 @@ public class noteObjectScript : MonoBehaviour
         if (other.tag == "Activator")
         {
             canBePressed = true;
-            Debug.Log("can be press");
+            //Debug.Log("can be press");
         }
     }
     private void OnTriggerExit(Collider other)
@@ -40,6 +43,7 @@ public class noteObjectScript : MonoBehaviour
         if (other.tag == "Activator")
         {
             canBePressed = false;
+            RythmGameManager.instance.noteMissed();
         }
     }
 }
