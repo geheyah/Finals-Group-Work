@@ -36,7 +36,7 @@ public class Type1enemyScript : MonoBehaviour
         RaycastHit hitInfo;
         Vector3 raycastOrigin = transform.position;
 
-        Vector3 leftraycastDirection = Vector3.left; // Cast ray to the left     
+        Vector3 leftraycastDirection = Vector3.left; // Cast ray to the left
         Vector3 righttraycastDirection = Vector3.right; //cast ray to the right
         Vector3 backtraycastDirection = Vector3.back; //cast ray to the back
         Vector3 forwardtraycastDirection = Vector3.forward; //cast ray to the forward
@@ -100,7 +100,6 @@ public class Type1enemyScript : MonoBehaviour
         float stoppingDistance = 1.5f; // Adjust this value to change the distance between enemy and player
         Vector3 targetPosition = player.position + (transform.position - player.position).normalized * stoppingDistance;
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-        Debug.Log("Following player");
     }
 
     void patrolMovement()
@@ -108,7 +107,7 @@ public class Type1enemyScript : MonoBehaviour
         // Calculate the horizontal movement based on a sine wave
         float movement = Mathf.Sin(Time.time * speed) * travelDistance;
         // Calculate the direction to move based on the sine wave
-        Vector3 direction = new Vector3(movement, 0f,0f);;
+        Vector3 direction = new Vector3(movement, 0f, 0f); ;
         // Move the enemy in the calculated direction
         transform.position += direction * speed * Time.deltaTime;
     }

@@ -4,6 +4,11 @@ public class NPC : MonoBehaviour
 {
     public float interactionRadius = 3f; // The radius at which the player can interact with the NPC
 
+    public string[] dialogue; // Array of dialogue lines to display when interacting with the NPC
+    public bool questAvailable; // Flag to indicate if a quest is available from the NPC
+    public string questTitle; // The title of the quest
+    public string questDescription; // The description of the quest
+
     private bool isInRange = false; // Flag to indicate if the player is in range of the NPC
 
     void Update()
@@ -35,7 +40,39 @@ public class NPC : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Debug.Log("Interacted with NPC");
+                DisplayDialogue();
+                if (questAvailable)
+                {
+                    DisplayQuest();
+                }
             }
+        }
+    }
+
+    void DisplayDialogue()
+    {
+        // Loop through the dialogue array and display each line
+        foreach (string line in dialogue)
+        {
+            Debug.Log(line);
+        }
+    }
+
+    void DisplayQuest()
+    {
+        // Offer the quest to the player
+        Debug.Log("Would you like to accept the quest: " + questTitle);
+        Debug.Log(questDescription);
+
+        // Wait for the player's response
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            Debug.Log("Quest accepted!");
+            // TODO: Add code to activate the quest
+        }
+        else if (Input.GetKeyDown(KeyCode.N))
+        {
+            Debug.Log("Quest declined.");
         }
     }
 }
