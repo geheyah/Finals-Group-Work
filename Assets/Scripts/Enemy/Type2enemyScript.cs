@@ -9,11 +9,6 @@ public class Type2enemyScript : MonoBehaviour
     public Transform player; // Add player here
     private bool isFollowingPlayer = false;
 
-    void Start()
-    {
-       
-    }
-
     void Update()
     {
         enemySight();
@@ -40,16 +35,16 @@ public class Type2enemyScript : MonoBehaviour
         {
             // Check if the raycast hits a player
             if (hitInfo.collider.CompareTag("Player"))
-            {        
+            {
                 Debug.Log("left detected");
                 isFollowingPlayer = true; //set the isFollowingPlayer to true and start enemyAgro
             }
         }
         //back raycast
         else if (Physics.Raycast(raycastOrigin, backtraycastDirection, out hitInfo, enemySightRange))
-        {       
+        {
             if (hitInfo.collider.CompareTag("Player")) // Check if the raycast hits a player
-            {               
+            {
                 Debug.Log("right detected"); //set the isFollowingPlayer to true and start enemyAgro
                 isFollowingPlayer = true;
             }
@@ -57,7 +52,7 @@ public class Type2enemyScript : MonoBehaviour
 
         //right raycast
         else if (Physics.Raycast(raycastOrigin, righttraycastDirection, out hitInfo, enemySightRange))
-        {      
+        {
             if (hitInfo.collider.CompareTag("Player")) // Check if the raycast hits a player
             {
                 Debug.Log("right detected"); //set the isFollowingPlayer to true and start enemyAgro
@@ -68,7 +63,7 @@ public class Type2enemyScript : MonoBehaviour
         //forward raycast
         else if (Physics.Raycast(raycastOrigin, forwardtraycastDirection, out hitInfo, enemySightRange))
         {
- 
+
             if (hitInfo.collider.CompareTag("Player"))   // Check if the raycast hits a player
             {
 
