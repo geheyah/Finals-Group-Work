@@ -24,7 +24,7 @@ public class noteObjectScript : MonoBehaviour
         {
             if(canBePressed)
             {
-                gameObject.SetActive(false);
+                Destroy(this.gameObject);
 
                 RythmGameManager.instance.noteHit();
             }
@@ -45,5 +45,10 @@ public class noteObjectScript : MonoBehaviour
             canBePressed = false;
             RythmGameManager.instance.noteMissed();
         }
+    }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }
