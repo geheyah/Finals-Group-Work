@@ -247,6 +247,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lowpoly_tree_sample
       objectReference: {fileID: 0}
+    - target: {fileID: 5877944272347950029, guid: aa6044982d4e79f46a80935c04e9f28e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 59286295c65d37d4a94766f5fc4b5ae1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa6044982d4e79f46a80935c04e9f28e, type: 3}
 --- !u!1001 &725909730
@@ -357,6 +361,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 67bed1cfcd8ef9548bb9c8cd9d67931e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 62317432ea48b2c4cb92aa81ee76667c, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 67bed1cfcd8ef9548bb9c8cd9d67931e, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: de6c8d190aeb65b4b9e2225c2c347636, type: 2}
     - target: {fileID: 919132149155446097, guid: 67bed1cfcd8ef9548bb9c8cd9d67931e, type: 3}
       propertyPath: m_Name
       value: Residential Buildings 005
@@ -414,6 +426,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -89.918
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 92d4c27d1948c3c44b00ebf93805b640, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 62317432ea48b2c4cb92aa81ee76667c, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 92d4c27d1948c3c44b00ebf93805b640, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: de6c8d190aeb65b4b9e2225c2c347636, type: 2}
     - target: {fileID: 919132149155446097, guid: 92d4c27d1948c3c44b00ebf93805b640, type: 3}
       propertyPath: m_Name
       value: Residential Buildings 006
@@ -471,7 +491,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 62317432ea48b2c4cb92aa81ee76667c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -566,6 +586,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 3d7bc050a1db14e4699190829263b0a2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 62317432ea48b2c4cb92aa81ee76667c, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 3d7bc050a1db14e4699190829263b0a2, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: de6c8d190aeb65b4b9e2225c2c347636, type: 2}
     - target: {fileID: 919132149155446097, guid: 3d7bc050a1db14e4699190829263b0a2, type: 3}
       propertyPath: m_Name
       value: Residential Buildings 001
