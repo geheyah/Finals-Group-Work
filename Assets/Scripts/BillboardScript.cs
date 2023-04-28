@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Billboard : MonoBehaviour
+public class BillboardScript : MonoBehaviour
 {
     [SerializeField] private BillboardType billboardType;
 
