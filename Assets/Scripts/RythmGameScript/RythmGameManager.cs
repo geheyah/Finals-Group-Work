@@ -15,10 +15,13 @@ public class RythmGameManager : MonoBehaviour
 
     public int currentScore;
     public int scorePerNote;
+    public float soundDelay;
+
+    public float noteDamage;
+    public float playerHealth;
 
     public TextMeshProUGUI scoreText;
-
-   
+    public TextMeshProUGUI healthText;
 
 
     // Start is called before the first frame update
@@ -39,7 +42,8 @@ public class RythmGameManager : MonoBehaviour
                 startPlaying = true;
                 theBS.hasStarted = true;
 
-                theMusic.Play();
+
+                Invoke("DelayedStartPlaying", soundDelay);
             }
         }
     }
@@ -54,5 +58,20 @@ public class RythmGameManager : MonoBehaviour
     public void noteMissed()
     {
         Debug.Log("note missed");
+
+        playerHealth -= noteDamage;
+        healthText.text = "Health: " + playerHealth;
+        
+        if(playerHealth <= 0 )
+        {
+            Debug.Log("You Lose");
+
+            //transition to defeat screen and ask the player to replay or quit
+        }
+    }
+
+    void DelayedStartPlaying()
+    {
+        theMusic.Play();
     }
 }
