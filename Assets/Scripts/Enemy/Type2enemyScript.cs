@@ -9,6 +9,9 @@ public class Type2enemyScript : MonoBehaviour
     public Transform player; // Add player here
     private bool isFollowingPlayer = false;
 
+    public LayerMask obstacleLayerMask; 
+
+
     void Update()
     {
         enemySight();
@@ -22,65 +25,65 @@ public class Type2enemyScript : MonoBehaviour
 
     void enemySight()
     {
-        RaycastHit hitInfo;
+
+        RaycastHit[] hitInfos;
         Vector3 raycastOrigin = transform.position;
 
-        Vector3 leftraycastDirection = Vector3.left;         // Cast ray to the left
-        Vector3 righttraycastDirection = Vector3.right;      // Cast ray to the right
-        Vector3 forwardtraycastDirection = Vector3.forward;  // Cast ray to the forward
-        Vector3 backtraycastDirection = Vector3.back;        // Cast ray to the back
+        Vector3 leftraycastDirection = Vector3.left; // Cast ray to the left
+        Vector3 righttraycastDirection = Vector3.right; //cast ray to the right
+        Vector3 backtraycastDirection = Vector3.back; //cast ray to the back
+        Vector3 forwardtraycastDirection = Vector3.forward; //cast ray to the forward
 
-        //left raycast
-        if (Physics.Raycast(raycastOrigin, leftraycastDirection, out hitInfo, enemySightRange))
+        hitInfos = Physics.RaycastAll(raycastOrigin, leftraycastDirection, enemySightRange);
+        foreach (RaycastHit hitInfo in hitInfos)
         {
-            // Check if the raycast hits a player
             if (hitInfo.collider.CompareTag("Player"))
             {
                 Debug.Log("left detected");
-                isFollowingPlayer = true; //set the isFollowingPlayer to true and start enemyAgro
-            }
-        }
-        //back raycast
-        else if (Physics.Raycast(raycastOrigin, backtraycastDirection, out hitInfo, enemySightRange))
-        {
-            if (hitInfo.collider.CompareTag("Player")) // Check if the raycast hits a player
-            {
-                Debug.Log("right detected"); //set the isFollowingPlayer to true and start enemyAgro
                 isFollowingPlayer = true;
+                return;
             }
         }
 
-        //right raycast
-        else if (Physics.Raycast(raycastOrigin, righttraycastDirection, out hitInfo, enemySightRange))
+        hitInfos = Physics.RaycastAll(raycastOrigin, righttraycastDirection, enemySightRange);
+        foreach (RaycastHit hitInfo in hitInfos)
         {
-            if (hitInfo.collider.CompareTag("Player")) // Check if the raycast hits a player
+            if (hitInfo.collider.CompareTag("Player"))
             {
-                Debug.Log("right detected"); //set the isFollowingPlayer to true and start enemyAgro
-                isFollowingPlayer = true;
-            }
-        }
-
-        //forward raycast
-        else if (Physics.Raycast(raycastOrigin, forwardtraycastDirection, out hitInfo, enemySightRange))
-        {
-
-            if (hitInfo.collider.CompareTag("Player"))   // Check if the raycast hits a player
-            {
-
                 Debug.Log("right detected");
-                isFollowingPlayer = true;   //set the isFollowingPlayer to true and start enemyAgro
+                isFollowingPlayer = true;
+                return;
             }
         }
 
-        else
+        hitInfos = Physics.RaycastAll(raycastOrigin, backtraycastDirection, enemySightRange);
+        foreach (RaycastHit hitInfo in hitInfos)
         {
-            isFollowingPlayer = false;
+            if (hitInfo.collider.CompareTag("Player"))
+            {
+                Debug.Log("back detected");
+                isFollowingPlayer = true;
+                return;
+            }
         }
+
+        hitInfos = Physics.RaycastAll(raycastOrigin, forwardtraycastDirection, enemySightRange);
+        foreach (RaycastHit hitInfo in hitInfos)
+        {
+            if (hitInfo.collider.CompareTag("Player"))
+            {
+                Debug.Log("forward detected");
+                isFollowingPlayer = true;
+                return;
+            }
+        }
+
+        isFollowingPlayer = false;
 
         Debug.DrawRay(raycastOrigin, leftraycastDirection * enemySightRange, Color.red);
         Debug.DrawRay(raycastOrigin, righttraycastDirection * enemySightRange, Color.red);
-        Debug.DrawRay(raycastOrigin, forwardtraycastDirection * enemySightRange, Color.red);
         Debug.DrawRay(raycastOrigin, backtraycastDirection * enemySightRange, Color.red);
+        Debug.DrawRay(raycastOrigin, forwardtraycastDirection * enemySightRange, Color.red);
     }
 
     void enemyAgro()

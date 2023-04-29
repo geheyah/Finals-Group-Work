@@ -560,9 +560,21 @@ PrefabInstance:
       value: BasicEnemy1
       objectReference: {fileID: 0}
     - target: {fileID: 2421133049964940146, guid: 0b6e4d623808908418a9eab0847f6a35, type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2421133049964940146, guid: 0b6e4d623808908418a9eab0847f6a35, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1123194457}
+    - target: {fileID: 2421133049964940146, guid: 0b6e4d623808908418a9eab0847f6a35, type: 3}
+      propertyPath: travelDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2421133049964940146, guid: 0b6e4d623808908418a9eab0847f6a35, type: 3}
+      propertyPath: enemySightRange
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2421133049964940149, guid: 0b6e4d623808908418a9eab0847f6a35, type: 3}
       propertyPath: m_RootOrder
       value: 5

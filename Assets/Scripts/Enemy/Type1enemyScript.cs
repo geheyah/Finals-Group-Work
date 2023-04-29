@@ -11,6 +11,7 @@ public class Type1enemyScript : MonoBehaviour
     public float travelDistance;
 
 
+
     private bool isFollowingPlayer = false;
 
     void Start()
