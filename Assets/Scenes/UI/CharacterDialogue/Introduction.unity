@@ -272,7 +272,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Ah, you\u2019re here.. Aeryn mentioned your arrival"
+  m_text: "An angel, calls for you after you\u2019ve died\u2026"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d69ad96148c829c46bf8068a5f6015e4, type: 2}
   m_sharedMaterial: {fileID: -8129298729033390294, guid: d69ad96148c829c46bf8068a5f6015e4, type: 2}
@@ -281,8 +281,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278225166
-  m_fontColor: {r: 0.05479072, g: 0.5377358, b: 0, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -299,8 +299,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 75
-  m_fontSizeBase: 75
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
