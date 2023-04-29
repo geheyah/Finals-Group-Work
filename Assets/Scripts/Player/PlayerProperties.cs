@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerProperties : MonoBehaviour
 {
@@ -20,11 +21,13 @@ public class PlayerProperties : MonoBehaviour
         if (missingLeaves >= 5)
         {
             foliaComplete = true;
+            SceneManager.LoadScene(3);
         }
 
         if (enemiesSlain >= 5)
         {
             satanaComplete = true;
+            SceneManager.LoadScene(4);
         }
     }
 }
