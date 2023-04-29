@@ -5,6 +5,7 @@ using UnityEngine;
 public class noteObjectScript : MonoBehaviour
 {
     public bool canBePressed;
+    
   
 
     public KeyCode keyToPress;
@@ -34,7 +35,7 @@ public class noteObjectScript : MonoBehaviour
         if (other.tag == "Activator")
         {
             canBePressed = true;
-            //Debug.Log("can be press");
+            Debug.Log("can be press");
         }
     }
     private void OnTriggerExit(Collider other)
