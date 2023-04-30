@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class PlayerProperties : MonoBehaviour
 {
     public static PlayerProperties instance;
