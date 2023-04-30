@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
@@ -49,6 +50,15 @@ public class RythmGameManager : MonoBehaviour
     }
     public void noteHit()
     {
+
+        if (Random.Range(0f, 1f) < 0.20) // 0.20 chance on getting your health back 
+        {
+            playerHealth += 5;
+            healthText.text = "Health: " + playerHealth;
+
+            Debug.Log("add health");
+        }
+
         currentScore += scorePerNote;
 
         scoreText.text = "Score: " + currentScore;
@@ -66,6 +76,9 @@ public class RythmGameManager : MonoBehaviour
         {
             Debug.Log("You Lose");
 
+            startPlaying = false;
+            theMusic.Stop();
+            //SceneManager.LoadScene(5);
             //transition to defeat screen and ask the player to replay or quit
         }
     }
