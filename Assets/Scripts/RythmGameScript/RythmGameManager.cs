@@ -66,6 +66,8 @@ public class RythmGameManager : MonoBehaviour
         {
             Debug.Log("You Lose");
 
+            startPlaying = false;
+            theMusic.Stop();
             //transition to defeat screen and ask the player to replay or quit
         }
     }
