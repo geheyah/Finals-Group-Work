@@ -23,22 +23,28 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             if (textComponent.text == lines[index])
             {
-                NextLine();
+                NextLine;
             }
+            else
+            {
+                StopAllCoroutines();
+                textComponent.text = lines[index];
+            }
+
         }
     }
 
     void StartDialogue()
     {
         index = 0;
-        StartCoroutine(Typeline());
+        StartCoroutine(TypeLine());
     }
 
-    IEnumerator Typeline()
+    IEnumerator TypeLine()
     {
         foreach (char c in lines[index].ToCharArray())
         {
@@ -53,7 +59,7 @@ public class Dialogue : MonoBehaviour
         {
             index++;
             textComponent.text = string.Empty;
-            StartCoroutine(Typeline());
+            StartCoroutine(TypeLine());
         }
         else
         {
