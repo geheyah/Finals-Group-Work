@@ -28,7 +28,7 @@ public class MissingLeaf : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, interactionRadius);
     }
 
-    void obtainLeaf()
+    public void obtainLeaf()
     {
         if (isInRange == true)
         {
