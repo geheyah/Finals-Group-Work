@@ -10,6 +10,8 @@ TagManager:
   - note_3
   - note_4
   - Activator
+  - Wall
+  - Building
   layers:
   - Default
   - TransparentFX
@@ -18,7 +20,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Building
   - 
   - 
   - 
