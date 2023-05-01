@@ -7,8 +7,9 @@ public class PlayerProperties : MonoBehaviour
     public int missingLeaves = 0;
     public int enemiesSlain = 0;
 
-    public bool foliaComplete = false;
-    public bool satanaComplete = false;
+    //private int aquasAffection = 0;
+    private int foliaAffection = 0;
+    private int sataniaAffection = 0;
 
     void Awake()
     {
@@ -19,12 +20,12 @@ public class PlayerProperties : MonoBehaviour
     {
         if (missingLeaves >= 5)
         {
-            foliaComplete = true;
+            foliaAffection++;
         }
 
         if (enemiesSlain >= 5)
         {
-            satanaComplete = true;
+            sataniaAffection++;
         }
     }
 }
