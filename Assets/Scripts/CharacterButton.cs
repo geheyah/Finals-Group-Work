@@ -9,13 +9,13 @@ public class CharacterButton : MonoBehaviour
     {
         if (PlayerProperties.instance.GetAffectionLevel(characterName) == 1)
         {
-            SceneManager.LoadScene(characterName + "GoodEnding");
-            Debug.Log("Good Ending");
+           // SceneManager.LoadScene(characterName + "GoodEnding");
+            Debug.Log(characterName + " Good Ending");
         }
         else
         {
-            SceneManager.LoadScene(characterName + "BadEnding");
-            Debug.Log("Bad Ending");
+            //SceneManager.LoadScene(characterName + "BadEnding");
+            Debug.Log(characterName + " Bad Ending");
         }
     }
 }
