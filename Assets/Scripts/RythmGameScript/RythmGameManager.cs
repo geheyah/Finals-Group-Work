@@ -31,6 +31,7 @@ public class RythmGameManager : MonoBehaviour
         instance = this;
 
         scoreText.text = "Score: 0";
+        healthText.text = "Health: 10";
     }
 
     // Update is called once per frame
@@ -53,7 +54,7 @@ public class RythmGameManager : MonoBehaviour
 
         if (Random.Range(0f, 1f) < 0.20) // 0.20 chance on getting your health back 
         {
-            playerHealth += 5;
+            playerHealth += 2;
             healthText.text = "Health: " + playerHealth;
 
             Debug.Log("add health");
