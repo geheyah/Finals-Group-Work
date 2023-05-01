@@ -2,7 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class Dialogue : MonoBehaviour
+public class EndingDialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
 
@@ -12,17 +12,11 @@ public class Dialogue : MonoBehaviour
 
     private int index;
 
-    public TextMeshProUGUI Yes;
-    public TextMeshProUGUI No;
-
     void Start()
     {
         textComponent.text = string.Empty;
         textComponent.fontSize = 20;
         StartDialogue();
-
-        No.gameObject.SetActive(false);
-        Yes.gameObject.SetActive(false);
     }
 
     void Update()
@@ -77,8 +71,6 @@ public class Dialogue : MonoBehaviour
         else
         {
             gameObject.SetActive(false);
-            No.gameObject.SetActive(true);
-            Yes.gameObject.SetActive(true);
         }
     }
 }
