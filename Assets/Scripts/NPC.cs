@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NPC : MonoBehaviour
 {
@@ -40,6 +41,7 @@ public class NPC : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Debug.Log("Interacted with NPC");
+              
                 DisplayDialogue();
                 if (questAvailable)
                 {
