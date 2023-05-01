@@ -104,8 +104,7 @@ public class RythmGameManager : MonoBehaviour
 
             startPlaying = false;
             theMusic.Stop();
-            //SceneManager.LoadScene(5);
-            //transition to defeat screen and ask the player to replay or quit
+            SceneManager.LoadScene(5);
         }
     }
 
