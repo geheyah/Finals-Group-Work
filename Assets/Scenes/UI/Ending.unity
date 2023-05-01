@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 23651300}
   - component: {fileID: 23651299}
   - component: {fileID: 23651298}
+  - component: {fileID: 23651301}
   m_Layer: 5
   m_Name: Satana
   m_TagString: Untagged
@@ -244,6 +245,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 23651296}
   m_CullTransparentMesh: 1
+--- !u!114 &23651301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23651296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9dc63ce91a3d048b4f92725817da46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Satana
 --- !u!1 &90228509
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,6 +566,7 @@ GameObject:
   - component: {fileID: 473357639}
   - component: {fileID: 473357638}
   - component: {fileID: 473357637}
+  - component: {fileID: 473357640}
   m_Layer: 5
   m_Name: Aquas
   m_TagString: Untagged
@@ -661,6 +676,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473357635}
   m_CullTransparentMesh: 1
+--- !u!114 &473357640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473357635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9dc63ce91a3d048b4f92725817da46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Aquas
 --- !u!1 &566407100
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,6 +780,7 @@ GameObject:
   - component: {fileID: 619386864}
   - component: {fileID: 619386863}
   - component: {fileID: 619386862}
+  - component: {fileID: 619386865}
   m_Layer: 5
   m_Name: Folia
   m_TagString: Untagged
@@ -861,6 +890,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 619386860}
   m_CullTransparentMesh: 1
+--- !u!114 &619386865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619386860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9dc63ce91a3d048b4f92725817da46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Folia
 --- !u!1 &907148551
 GameObject:
   m_ObjectHideFlags: 0
