@@ -8,12 +8,13 @@ public class PlayerProperties : MonoBehaviour
     public int enemiesSlain = 0;
     public bool questAccepted = true;
 
-    private bool leavesQuestComplete = false;
-    private bool enemiesQuestComplete = false;
-
     public int aquasAffection = 0;
     public int foliaAffection = 0;
     public int sataniaAffection = 0;
+
+    // Flags to ensure affection points only increase once
+    private bool foliaAffectionIncreased = false;
+    private bool sataniaAffectionIncreased = false;
 
     void Awake()
     {
@@ -22,14 +23,16 @@ public class PlayerProperties : MonoBehaviour
 
     void Update()
     {
-        if (missingLeaves >= 5 && questAccepted == true)
+        if (missingLeaves >= 5 && questAccepted == true && !foliaAffectionIncreased)
         {
             foliaAffection++;
+            foliaAffectionIncreased = true;
         }
 
-        if (enemiesSlain >= 5 && questAccepted == true)
+        if (enemiesSlain >= 5 && questAccepted == true && !sataniaAffectionIncreased)
         {
             sataniaAffection++;
+            sataniaAffectionIncreased = true;
         }
     }
 
