@@ -1902,3 +1902,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6011ef1bc192a0e439a8d7628b867b57, type: 3}
+--- !u!1 &1096059190544145278 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1811546916848550456, guid: 6011ef1bc192a0e439a8d7628b867b57, type: 3}
+  m_PrefabInstance: {fileID: 1096059190544145277}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1096059190544145279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096059190544145278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0df5b1cc5ba117b4e8e25849a8bbb2d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRadius: 3
+  dialogue: []
+  questAvailable: 0
+  questTitle: 
+  questDescription: 

@@ -660,7 +660,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionRadius: 3
-  dialogue: []
+  dialogue:
+  - 
   questAvailable: 0
   questTitle: rythm
   questDescription: 

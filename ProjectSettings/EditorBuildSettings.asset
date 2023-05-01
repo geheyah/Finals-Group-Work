@@ -24,6 +24,18 @@ EditorBuildSettings:
     path: Assets/Scenes/AquasLevel.unity
     guid: 8cecad35a87f5904e93ec8f3e2483f46
   - enabled: 1
+    path: Assets/Scenes/UI/CharacterDialogue/Satana.unity
+    guid: dd9b81cae1f1316459d0874fa77841e7
+  - enabled: 1
+    path: Assets/Scenes/UI/CharacterDialogue/Introduction.unity
+    guid: c2908d7df0feea04db0ce47a488e4e53
+  - enabled: 1
+    path: Assets/Scenes/UI/CharacterDialogue/Folia.unity
+    guid: 8c88f350f040e9b4ca0c95a38eb97ee4
+  - enabled: 1
+    path: Assets/Scenes/UI/CharacterDialogue/Aquas.unity
+    guid: 8e229443519e8384a8cfc3de09f00e62
+  - enabled: 1
     path: Assets/Scenes/rythmGame.unity
     guid: e64edb2ef82f09046827a8284b366f6d
   - enabled: 1

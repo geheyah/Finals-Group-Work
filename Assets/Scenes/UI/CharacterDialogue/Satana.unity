@@ -341,8 +341,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -877,7 +877,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -150.40002}
+  m_AnchoredPosition: {x: 0, y: -150.40004}
   m_SizeDelta: {x: -200, y: -309.954}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1438974011
@@ -894,11 +894,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 251410930}
   lines:
-  - "HEY YOU! I hear you\u2019re a brave one! And I have a job that needs some doing!!!
-    There\u2019s been some pesky slimes around here. And they\u2019re really gross
-    so I don\u2019t just wanna kill em myself. \r"
-  - "SoooOOooOo I need your help to take care of em. I can\u2019t do it on my own
-    because they\u2019re gross. So, uhhh. Good luck. "
+  - "HEY YOU! I hear you\u2019re a brave one! And I have a job that needs some doing!!!"
+  - "There\u2019s been some pesky slimes around here. And they\u2019re really gross
+    so I don\u2019t just wanna kill em myself. \r\n"
+  - 'SoooOOooOo I need your help to take care of em. '
+  - "I can\u2019t do it on my own because they\u2019re gross. So, uhhh. Good luck. "
   - Do it for me? Pretty please????????
   textSpeed: 0.1
   Yes: {fileID: 1593064646}

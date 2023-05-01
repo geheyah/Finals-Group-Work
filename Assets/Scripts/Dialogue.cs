@@ -79,6 +79,8 @@ public class Dialogue : MonoBehaviour
             gameObject.SetActive(false);
             No.gameObject.SetActive(true);
             Yes.gameObject.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }
