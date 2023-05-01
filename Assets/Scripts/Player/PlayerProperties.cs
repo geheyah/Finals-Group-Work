@@ -6,6 +6,7 @@ public class PlayerProperties : MonoBehaviour
 
     public int missingLeaves = 0;
     public int enemiesSlain = 0;
+    public bool questAccepted = true;
 
     //private int aquasAffection = 0;
     private int foliaAffection = 0;
@@ -18,12 +19,12 @@ public class PlayerProperties : MonoBehaviour
 
     void Update()
     {
-        if (missingLeaves >= 5)
+        if (missingLeaves >= 5 && questAccepted == true)
         {
             foliaAffection++;
         }
 
-        if (enemiesSlain >= 5)
+        if (enemiesSlain >= 5 && questAccepted == true)
         {
             sataniaAffection++;
         }
