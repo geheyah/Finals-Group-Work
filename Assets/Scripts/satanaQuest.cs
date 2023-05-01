@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class aquasQuest : MonoBehaviour
+public class satanaQuest : MonoBehaviour
 {
     public float interactionRadius = 3f; // The radius at which the player can interact with the NPC
 
@@ -11,6 +11,7 @@ public class aquasQuest : MonoBehaviour
     public bool questAvailable; // Flag to indicate if a quest is available from the NPC
     public string questTitle; // The title of the quest
     public string questDescription; // The description of the quest
+    public static NPC instance;
 
     private bool isInRange = false; // Flag to indicate if the player is in range of the NPC
 
@@ -42,8 +43,8 @@ public class aquasQuest : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                SceneManager.LoadScene(6);
                 Debug.Log("Interacted with NPC");
-                SceneManager.LoadScene(9);
                 DisplayDialogue();
                 if (questAvailable)
                 {
@@ -72,7 +73,7 @@ public class aquasQuest : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Y))
         {
             Debug.Log("Quest accepted!");
-            SceneManager.LoadScene(6);  //go to rythm game scene
+            // TODO: Add code to activate the quest
         }
         else if (Input.GetKeyDown(KeyCode.N))
         {
