@@ -47,4 +47,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI/Ending.unity
     guid: 38aa09534999c2d4ea8337841eb783ee
+  - enabled: 1
+    path: Assets/Scenes/UI/EndingScenes/AquasGood.unity
+    guid: 8bf84d0a165a37649917a8d6262c86c6
+  - enabled: 1
+    path: Assets/Scenes/UI/EndingScenes/FoliaBad.unity
+    guid: 64fce4a975740a14bbc4d43515ff4424
+  - enabled: 1
+    path: Assets/Scenes/UI/EndingScenes/FoliaGood.unity
+    guid: 001a9c540d49e9d4886350c99c94f3ff
+  - enabled: 1
+    path: Assets/Scenes/UI/EndingScenes/SatanaBad.unity
+    guid: 519794ada21da2a4fa3ea6a6985697e3
+  - enabled: 1
+    path: Assets/Scenes/UI/EndingScenes/SatanaGood.unity
+    guid: 9974b437291810644bf2d152b0154437
   m_configObjects: {}
