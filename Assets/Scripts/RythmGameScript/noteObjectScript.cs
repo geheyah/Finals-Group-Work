@@ -5,8 +5,6 @@ using UnityEngine;
 public class noteObjectScript : MonoBehaviour
 {
     public bool canBePressed;
-    
-  
 
     public KeyCode keyToPress;
     

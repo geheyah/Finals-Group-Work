@@ -24,6 +24,15 @@ public class RythmGameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI healthText;
 
+    public Transform hitPosEffect1;
+    public Transform hitPosEffect2;
+    public Transform hitPosEffect3;
+    public Transform hitPosEffect4;
+
+    public GameObject hitEffect1;
+    public GameObject hitEffect2;
+    public GameObject hitEffect3;
+    public GameObject hitEffect4;
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +67,22 @@ public class RythmGameManager : MonoBehaviour
             healthText.text = "Health: " + playerHealth;
 
             Debug.Log("add health");
+        }
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            Instantiate(hitEffect1, hitPosEffect1.position, Quaternion.identity);
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            Instantiate(hitEffect2, hitPosEffect2.position, Quaternion.identity);
+        }
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            Instantiate(hitEffect3, hitPosEffect3.position, Quaternion.identity);
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Instantiate(hitEffect4, hitPosEffect4.position, Quaternion.identity);
         }
 
         currentScore += scorePerNote;
