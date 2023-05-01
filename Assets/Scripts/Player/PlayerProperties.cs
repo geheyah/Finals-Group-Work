@@ -6,6 +6,7 @@ public class PlayerProperties : MonoBehaviour
 
     public int missingLeaves = 0;
     public int enemiesSlain = 0;
+    public bool questAccepted = true;
 
     public bool foliaComplete = false;
     public bool satanaComplete = false;
@@ -17,12 +18,12 @@ public class PlayerProperties : MonoBehaviour
 
     void Update()
     {
-        if (missingLeaves >= 5)
+        if (missingLeaves >= 5 && questAccepted == true)
         {
             foliaComplete = true;
         }
 
-        if (enemiesSlain >= 5)
+        if (enemiesSlain >= 5 && questAccepted == true)
         {
             satanaComplete = true;
         }
