@@ -1,6 +1,9 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
+
 
 public class EndingDialogue : MonoBehaviour
 {
@@ -70,7 +73,7 @@ public class EndingDialogue : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
+            SceneManager.LoadScene("Thanks");
         }
     }
 }

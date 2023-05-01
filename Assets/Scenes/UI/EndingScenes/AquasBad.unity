@@ -213,6 +213,49 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2016086867697149017, guid: 11740a5b4f4850746a778ab5da9d720f, type: 3}
+      propertyPath: lines.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016086867697149017, guid: 11740a5b4f4850746a778ab5da9d720f, type: 3}
+      propertyPath: lines.Array.data[0]
+      value: "Ahem\u2026 W-what?! "
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016086867697149017, guid: 11740a5b4f4850746a778ab5da9d720f, type: 3}
+      propertyPath: lines.Array.data[1]
+      value: "D-don\u2019t tell me you like me when you can\u2019t even do such a
+        simple thing for me, useless knight!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016086867697149017, guid: 11740a5b4f4850746a778ab5da9d720f, type: 3}
+      propertyPath: lines.Array.data[2]
+      value: And what's this about confessing to me?
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016086867697149017, guid: 11740a5b4f4850746a778ab5da9d720f, type: 3}
+      propertyPath: lines.Array.data[3]
+      value: I-I don't care about your silly feelings!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016086867697149017, guid: 11740a5b4f4850746a778ab5da9d720f, type: 3}
+      propertyPath: lines.Array.data[4]
+      value: I have better things to do than worry about a knight who can't even
+        complete a simple quest!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016086867697149017, guid: 11740a5b4f4850746a778ab5da9d720f, type: 3}
+      propertyPath: lines.Array.data[5]
+      value: 'Besides, even if you did finish the quest, it doesn''t mean I''ll accept
+        your confession! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016086867697149017, guid: 11740a5b4f4850746a778ab5da9d720f, type: 3}
+      propertyPath: lines.Array.data[6]
+      value: You're just a human, and I'm a goddess,
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016086867697149017, guid: 11740a5b4f4850746a778ab5da9d720f, type: 3}
+      propertyPath: lines.Array.data[7]
+      value: 'So forget about me and focus on becoming an actual better knight! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016086867697149017, guid: 11740a5b4f4850746a778ab5da9d720f, type: 3}
+      propertyPath: lines.Array.data[8]
+      value: "Maybe then you\u2019ll be actual useful. B-Baka!"
+      objectReference: {fileID: 0}
     - target: {fileID: 2016086869067714517, guid: 11740a5b4f4850746a778ab5da9d720f, type: 3}
       propertyPath: m_Name
       value: EndingDialogue

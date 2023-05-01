@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/rythmGame.unity
     guid: e64edb2ef82f09046827a8284b366f6d
+  - enabled: 1
+    path: Assets/Scenes/UI/EndingScenes/AquasBad.unity
+    guid: f627f0a7c1316c9478d60eb54e86b8fb
+  - enabled: 1
+    path: Assets/Scenes/Thanks.unity
+    guid: 16b5fa7b8f6f7ab4f81112ba24ea05f2
   m_configObjects: {}

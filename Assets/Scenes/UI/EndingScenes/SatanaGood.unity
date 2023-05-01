@@ -481,25 +481,41 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2016086867697149017, guid: 11740a5b4f4850746a778ab5da9d720f, type: 3}
       propertyPath: lines.Array.size
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2016086867697149017, guid: 11740a5b4f4850746a778ab5da9d720f, type: 3}
       propertyPath: lines.Array.data[0]
-      value: 'Nice try, knight. '
+      value: 'Heh. '
       objectReference: {fileID: 0}
     - target: {fileID: 2016086867697149017, guid: 11740a5b4f4850746a778ab5da9d720f, type: 3}
       propertyPath: lines.Array.data[1]
-      value: 'You chickened out when I asked you to kill lowly slimes. And you have
-        the guts to ask me out? '
+      value: "I didn\u2019t think you\u2019d even have the guts to confess to me. "
       objectReference: {fileID: 0}
     - target: {fileID: 2016086867697149017, guid: 11740a5b4f4850746a778ab5da9d720f, type: 3}
       propertyPath: lines.Array.data[2]
-      value: Get your head straight, mongrel. And know your place.
+      value: 'Especially just that you just finished one damn quest. '
       objectReference: {fileID: 0}
     - target: {fileID: 2016086867697149017, guid: 11740a5b4f4850746a778ab5da9d720f, type: 3}
       propertyPath: lines.Array.data[3]
-      value: "I hope you can understand my decision and that we can still be friends\u2026
-        \r"
+      value: "My heart isn\u2019t that easy to get, you know?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016086867697149017, guid: 11740a5b4f4850746a778ab5da9d720f, type: 3}
+      propertyPath: lines.Array.data[4]
+      value: "But hey, you\u2019ve caught my attention. You\u2019re pretty cool at
+        fighting and kinda cute too."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016086867697149017, guid: 11740a5b4f4850746a778ab5da9d720f, type: 3}
+      propertyPath: lines.Array.data[5]
+      value: I accept your confession.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016086867697149017, guid: 11740a5b4f4850746a778ab5da9d720f, type: 3}
+      propertyPath: lines.Array.data[6]
+      value: "But I f*** you. Don\u2019t get all lovey-dovey clingy around me, you
+        understand?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2016086867697149017, guid: 11740a5b4f4850746a778ab5da9d720f, type: 3}
+      propertyPath: lines.Array.data[7]
+      value: "\u2018Love ya."
       objectReference: {fileID: 0}
     - target: {fileID: 2016086869067714517, guid: 11740a5b4f4850746a778ab5da9d720f, type: 3}
       propertyPath: m_Name
