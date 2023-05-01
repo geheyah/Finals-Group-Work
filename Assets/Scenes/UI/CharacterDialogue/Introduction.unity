@@ -175,8 +175,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 287214360}
-  lines: []
-  textSpeed: 0.3
+  lines:
+  - "An angel, calls for you after you\u2019ve died\u2026"
+  - Aeryn has tasked you to go to the realm of Grass, Fire and Water to woo maidens
+    and live good in the Afterlife.
+  textSpeed: 0.1
 --- !u!114 &118070219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,7 +275,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "An angel, calls for you after you\u2019ve died\u2026"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d69ad96148c829c46bf8068a5f6015e4, type: 2}
   m_sharedMaterial: {fileID: -8129298729033390294, guid: d69ad96148c829c46bf8068a5f6015e4, type: 2}
