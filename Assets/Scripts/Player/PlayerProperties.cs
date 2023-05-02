@@ -35,7 +35,7 @@ public class PlayerProperties : MonoBehaviour
         if (missingLeaves >= 5 && questAccepted == true && !foliaAffectionIncreased)
         {
             foliaAffection++;
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(20);
             foliaAffectionIncreased = true;
         }
 
