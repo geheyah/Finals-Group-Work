@@ -1193,9 +1193,9 @@ MonoBehaviour:
   - "I can\u2019t do it on my own because they\u2019re gross. So, uhhh. Good luck. "
   - Do it for me? Pretty please????????
   textSpeed: 0.1
-  Yes: {fileID: 0}
-  No: {fileID: 0}
-  goBackBtn: {fileID: 0}
+  Yes: {fileID: 1733541088}
+  No: {fileID: 1819123115}
+  goBackBtn: {fileID: 783014165}
 --- !u!114 &1438974012
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -438,7 +438,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1839529571}
         m_TargetAssemblyTypeName: ChoiceBtnScript, Assembly-CSharp
-        m_MethodName: foliaCompletionQuestBtn
+        m_MethodName: SatanaCompletionQuestBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

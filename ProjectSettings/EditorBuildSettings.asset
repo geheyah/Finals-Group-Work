@@ -74,4 +74,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI/QuestCompleteDialogues/aquasQuestCompleteScene.unity
     guid: 475c4989512c2334fa375c3dbbc4b538
+  - enabled: 1
+    path: Assets/Scenes/Satana/SatanaQuestCompleteScene.unity
+    guid: 33f60bfc14aeba641a74cf28ab4e8c82
+  - enabled: 1
+    path: Assets/Scenes/Satana/SatanaQuestDone.unity
+    guid: da753709e64cc6b4b8fa6673b56d82f6
+  - enabled: 1
+    path: Assets/Scenes/Satana/SatanaQuestInProgress.unity
+    guid: 646f521d88f796d46b1d5cf2912abebf
   m_configObjects: {}
