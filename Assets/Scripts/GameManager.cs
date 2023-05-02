@@ -19,15 +19,17 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+
         LoadAffectionPoints();
     }
 
     void LoadAffectionPoints()
-    {
-        PlayerProperties.instance.aquasAffection = PlayerPrefs.GetInt("AquasAffection", 0);
-        PlayerProperties.instance.foliaAffection = PlayerPrefs.GetInt("FoliaAffection", 0);
-        PlayerProperties.instance.sataniaAffection = PlayerPrefs.GetInt("SataniaAffection", 0);
-    }
+     {
+         PlayerProperties.instance.aquasAffection = PlayerPrefs.GetInt("aquasAffection");
+         PlayerProperties.instance.foliaAffection = PlayerPrefs.GetInt("foliaAffection");
+         PlayerProperties.instance.sataniaAffection = PlayerPrefs.GetInt("sataniaAffection");
+     }
+
 
     // You can add other functions here to save or modify the affection points as well
 }

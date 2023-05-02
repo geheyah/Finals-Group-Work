@@ -7,7 +7,7 @@ public class CharacterButton : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (PlayerProperties.instance.GetAffectionLevel(characterName) == 1)
+        if (PlayerProperties.instance.GetAffectionLevel(characterName) >= 1)
         {
             SceneManager.LoadScene(characterName + "Good");
             Debug.Log(characterName + " Good Ending");

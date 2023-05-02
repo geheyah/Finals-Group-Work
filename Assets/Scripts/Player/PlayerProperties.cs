@@ -26,10 +26,11 @@ public class PlayerProperties : MonoBehaviour
 
     void Start()
     {
-        // Load the value of aquasAffection from PlayerPrefs
-        aquasAffection = PlayerPrefs.GetInt("AquasAffection", 0);
-        foliaAffection = PlayerPrefs.GetInt("foliaAffection", 0);
+       // PlayerPrefs.DeleteAll(); //use this to delete saved playerpref
+        aquasAffection = PlayerPrefs.GetInt("aquasAffection", 0);
         sataniaAffection = PlayerPrefs.GetInt("sataniaAffection", 0);
+        foliaAffection = PlayerPrefs.GetInt("foliaAffection", 0);
+
     }
 
     void Update()
@@ -43,12 +44,13 @@ public class PlayerProperties : MonoBehaviour
         if (missingLeaves >= 5 && questAccepted == true && !foliaAffectionIncreased)
         {
             foliaAffection++;
-            SceneManager.LoadScene("FoliaQuestCompleteScene");
             foliaAffectionIncreased = true;
-
-
+     
             PlayerPrefs.SetInt("foliaAffection", foliaAffection);
             PlayerPrefs.Save();
+
+            SceneManager.LoadScene("FoliaQuestCompleteScene");
+
         }
 
         if (enemiesSlain >= 5 && questAccepted == true && !sataniaAffectionIncreased)
@@ -70,7 +72,7 @@ public class PlayerProperties : MonoBehaviour
             Debug.Log("you win");
 
 
-            PlayerPrefs.SetInt("AquasAffection", aquasAffection);
+            PlayerPrefs.SetInt("aquasAffection", aquasAffection);
             PlayerPrefs.Save();
         }
     }

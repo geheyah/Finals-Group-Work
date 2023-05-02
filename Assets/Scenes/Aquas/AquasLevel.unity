@@ -275,6 +275,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6216493187751594363, guid: ecc5b7f7b0faf1a4db2d407d01e4d74d, type: 3}
+      propertyPath: questAccepted
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6216493187751594363, guid: ecc5b7f7b0faf1a4db2d407d01e4d74d, type: 3}
+      propertyPath: foliaAffection
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecc5b7f7b0faf1a4db2d407d01e4d74d, type: 3}
 --- !u!1001 &164156687
