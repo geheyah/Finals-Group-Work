@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class PlayerProperties : MonoBehaviour
@@ -11,6 +12,7 @@ public class PlayerProperties : MonoBehaviour
     public int aquasAffection = 0;
     public int foliaAffection = 0;
     public int sataniaAffection = 0;
+    public TextMeshProUGUI leafFound;
 
     // Flags to ensure affection points only increase once
     private bool foliaAffectionIncreased = false;
@@ -26,6 +28,8 @@ public class PlayerProperties : MonoBehaviour
         if (missingLeaves >= 5 && questAccepted == true && !foliaAffectionIncreased)
         {
             foliaAffection++;
+           
+
             foliaAffectionIncreased = true;
         }
 
@@ -34,6 +38,7 @@ public class PlayerProperties : MonoBehaviour
             sataniaAffection++;
             sataniaAffectionIncreased = true;
         }
+        leafFound.text = "Missing Leaves: " + missingLeaves.ToString();
     }
 
     public int GetAffectionLevel(string characterName)
