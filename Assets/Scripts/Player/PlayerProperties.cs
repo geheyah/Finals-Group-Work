@@ -45,6 +45,15 @@ public class PlayerProperties : MonoBehaviour
             sataniaAffectionIncreased = true;
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Activator")
+        {
+            SceneManager.LoadScene(22);
+            aquasAffection++;
+            Debug.Log("you win");
+        }
+    }
 
     public int GetAffectionLevel(string characterName)
     {
