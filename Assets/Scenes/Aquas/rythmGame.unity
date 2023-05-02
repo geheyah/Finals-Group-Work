@@ -6704,7 +6704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7389901184305249524, guid: 47c2a481c145e62428b65259742e440d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 362.35
+      value: 362.378
       objectReference: {fileID: 0}
     - target: {fileID: 7389901184305249524, guid: 47c2a481c145e62428b65259742e440d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13603,9 +13603,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1987669208}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9b7a9b76b29a7d43a2dc3fec4f0bb23, type: 3}
+  m_Script: {fileID: 11500000, guid: 23677bc0828f2cc4987ecaceab7f7b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  missingLeaves: 0
+  enemiesSlain: 0
+  questAccepted: 1
+  aquasAffection: 0
+  foliaAffection: 0
+  sataniaAffection: 0
+  leafFound: {fileID: 0}
 --- !u!4 &1995077963 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2237894385611204019, guid: 7be7b6e34a3038d418368927c93714ae, type: 3}

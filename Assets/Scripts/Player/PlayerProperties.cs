@@ -46,6 +46,15 @@ public class PlayerProperties : MonoBehaviour
             SceneManager.LoadScene("SatanaQuestCompleteScene");
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Activator")
+        {
+            SceneManager.LoadScene(22);
+            aquasAffection++;
+            Debug.Log("you win");
+        }
+    }
 
     public int GetAffectionLevel(string characterName)
     {
