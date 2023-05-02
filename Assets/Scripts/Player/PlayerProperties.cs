@@ -49,7 +49,7 @@ public class PlayerProperties : MonoBehaviour
     {
         if (other.tag == "Activator")
         {
-            SceneManager.LoadScene(22);
+           // SceneManager.LoadScene(22);
             aquasAffection++;
             Debug.Log("you win");
         }
