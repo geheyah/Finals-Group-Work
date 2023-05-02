@@ -11,7 +11,7 @@ public class youWinScript : MonoBehaviour
     {
         if (other.tag == "Activator")
         {
-            SceneManager.LoadScene(5);
+            SceneManager.LoadScene(22);
 
             Debug.Log("you win");
         }
