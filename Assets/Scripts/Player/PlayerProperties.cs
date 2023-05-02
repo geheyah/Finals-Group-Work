@@ -43,6 +43,7 @@ public class PlayerProperties : MonoBehaviour
         {
             sataniaAffection++;
             sataniaAffectionIncreased = true;
+            SceneManager.LoadScene("SatanaQuestCompleteScene");
         }
     }
 
