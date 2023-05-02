@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerProperties : MonoBehaviour
 {
@@ -25,11 +26,15 @@ public class PlayerProperties : MonoBehaviour
 
     void Update()
     {
+
+        if (leafFound != null) 
+        {
+            leafFound.text = "Missing Leaves: " + missingLeaves.ToString() + " /5";
+        }
+
         if (missingLeaves >= 5 && questAccepted == true && !foliaAffectionIncreased)
         {
             foliaAffection++;
-           
-
             foliaAffectionIncreased = true;
         }
 
@@ -38,7 +43,10 @@ public class PlayerProperties : MonoBehaviour
             sataniaAffection++;
             sataniaAffectionIncreased = true;
         }
-        leafFound.text = "Missing Leaves: " + missingLeaves.ToString() + " /5";
+        if(missingLeaves == 5)
+        {
+            SceneManager.LoadScene(3);
+        }
     }
 
     public int GetAffectionLevel(string characterName)
