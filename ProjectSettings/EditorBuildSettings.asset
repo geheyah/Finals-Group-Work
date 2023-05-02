@@ -62,4 +62,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI/EndingScenes/SatanaGood.unity
     guid: 9974b437291810644bf2d152b0154437
+  - enabled: 1
+    path: Assets/Scenes/foliaQuestScene.unity
+    guid: bb89024511e460d4b981fe62a30f26e0
   m_configObjects: {}

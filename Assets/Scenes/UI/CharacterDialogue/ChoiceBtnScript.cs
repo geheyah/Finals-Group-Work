@@ -13,4 +13,12 @@ public class ChoiceBtnScript : MonoBehaviour
     {
         SceneManager.LoadScene(5);
     }
+    public void acceptFoliaChoice()
+    {
+        SceneManager.LoadScene(19);
+    }
+    public void declinedFoliaChoice()
+    {
+        SceneManager.LoadScene(3);
+    }
 }
