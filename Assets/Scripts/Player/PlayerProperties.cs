@@ -27,7 +27,7 @@ public class PlayerProperties : MonoBehaviour
     void Update()
     {
 
-        if (leafFound != null) 
+        if (leafFound != null)
         {
             leafFound.text = "Missing Leaves: " + missingLeaves.ToString() + " /5";
         }
@@ -35,7 +35,7 @@ public class PlayerProperties : MonoBehaviour
         if (missingLeaves >= 5 && questAccepted == true && !foliaAffectionIncreased)
         {
             foliaAffection++;
-            SceneManager.LoadScene(20);
+            SceneManager.LoadScene("FoliaQuestCompleteScene");
             foliaAffectionIncreased = true;
         }
 

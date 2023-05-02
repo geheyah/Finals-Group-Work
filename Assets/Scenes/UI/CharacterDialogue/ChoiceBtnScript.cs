@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,7 +12,7 @@ public class ChoiceBtnScript : MonoBehaviour
         SceneManager.LoadScene(5);
     }
 
-//=====================================================================
+    //=====================================================================
 
     public void acceptFoliaChoice()
     {
@@ -26,9 +24,9 @@ public class ChoiceBtnScript : MonoBehaviour
     }
     public void foliaCompletionQuestBtn()
     {
-        SceneManager.LoadScene(3); 
+        SceneManager.LoadScene("FoliaQuestDone");
     }
 
-//=====================================================================
+    //=====================================================================
 }
 
