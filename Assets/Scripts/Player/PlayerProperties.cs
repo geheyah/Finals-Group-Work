@@ -10,9 +10,9 @@ public class PlayerProperties : MonoBehaviour
     public int enemiesSlain = 0;
     public bool questAccepted = true;
 
-    public int aquasAffection = 0;
-    public int foliaAffection = 0;
-    public int sataniaAffection = 0;
+    public int aquasAffection ;
+    public int foliaAffection;
+    public int sataniaAffection;
     public TextMeshProUGUI leafFound;
 
     // Flags to ensure affection points only increase once
@@ -22,11 +22,12 @@ public class PlayerProperties : MonoBehaviour
     void Awake()
     {
         instance = this;
+        
     }
-
+    
     void Start()
     {
-       // PlayerPrefs.DeleteAll(); //use this to delete saved playerpref
+       
         aquasAffection = PlayerPrefs.GetInt("aquasAffection", 0);
         sataniaAffection = PlayerPrefs.GetInt("sataniaAffection", 0);
         foliaAffection = PlayerPrefs.GetInt("foliaAffection", 0);
@@ -67,7 +68,7 @@ public class PlayerProperties : MonoBehaviour
     {
         if (other.tag == "Activator")
         {
-            // SceneManager.LoadScene(22);
+            SceneManager.LoadScene(22);
             aquasAffection++;
             Debug.Log("you win");
 
