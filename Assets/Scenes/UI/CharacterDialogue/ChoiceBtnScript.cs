@@ -32,5 +32,18 @@ public class ChoiceBtnScript : MonoBehaviour
     }
 
     //=====================================================================
+
+    public void acceptSatanaChoice()
+    {
+        SceneManager.LoadScene("SatanaQuestInProgress");
+    }
+    public void declinedSatanaChoice()
+    {
+        SceneManager.LoadScene("SatanaLevel");
+    }
+    public void SatanaCompletionQuestBtn()
+    {
+        SceneManager.LoadScene("SatanaQuestDone");
+    }
 }
 
