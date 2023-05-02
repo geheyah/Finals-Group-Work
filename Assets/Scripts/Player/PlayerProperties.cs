@@ -10,7 +10,7 @@ public class PlayerProperties : MonoBehaviour
     public int enemiesSlain = 0;
     public bool questAccepted = true;
 
-    public int aquasAffection ;
+    public int aquasAffection;
     public int foliaAffection;
     public int sataniaAffection;
     public TextMeshProUGUI leafFound;
@@ -22,12 +22,12 @@ public class PlayerProperties : MonoBehaviour
     void Awake()
     {
         instance = this;
-        
+        PlayerPrefs.DeleteAll();
     }
-    
+
     void Start()
     {
-       
+
         aquasAffection = PlayerPrefs.GetInt("aquasAffection", 0);
         sataniaAffection = PlayerPrefs.GetInt("sataniaAffection", 0);
         foliaAffection = PlayerPrefs.GetInt("foliaAffection", 0);
@@ -46,7 +46,7 @@ public class PlayerProperties : MonoBehaviour
         {
             foliaAffection++;
             foliaAffectionIncreased = true;
-     
+
             PlayerPrefs.SetInt("foliaAffection", foliaAffection);
             PlayerPrefs.Save();
 
