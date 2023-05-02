@@ -38,7 +38,7 @@ public class PlayerProperties : MonoBehaviour
             sataniaAffection++;
             sataniaAffectionIncreased = true;
         }
-        leafFound.text = "Missing Leaves: " + missingLeaves.ToString();
+        leafFound.text = "Missing Leaves: " + missingLeaves.ToString() + " /5";
     }
 
     public int GetAffectionLevel(string characterName)
