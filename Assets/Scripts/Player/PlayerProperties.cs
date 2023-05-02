@@ -24,6 +24,14 @@ public class PlayerProperties : MonoBehaviour
         instance = this;
     }
 
+    void Start()
+    {
+        // Load the value of aquasAffection from PlayerPrefs
+        aquasAffection = PlayerPrefs.GetInt("AquasAffection", 0);
+        foliaAffection = PlayerPrefs.GetInt("foliaAffection", 0);
+        sataniaAffection = PlayerPrefs.GetInt("sataniaAffection", 0);
+    }
+
     void Update()
     {
 
@@ -37,22 +45,32 @@ public class PlayerProperties : MonoBehaviour
             foliaAffection++;
             SceneManager.LoadScene("FoliaQuestCompleteScene");
             foliaAffectionIncreased = true;
+
+            PlayerPrefs.SetInt("foliaAffection", foliaAffection);
+            PlayerPrefs.Save();
         }
 
         if (enemiesSlain >= 5 && questAccepted == true && !sataniaAffectionIncreased)
         {
             sataniaAffection++;
             sataniaAffectionIncreased = true;
-            SceneManager.LoadScene("SatanaQuestCompleteScene");
+
+            PlayerPrefs.SetInt("sataniaAffection", sataniaAffection);
+            PlayerPrefs.Save();
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Activator")
         {
-           // SceneManager.LoadScene(22);
+            // SceneManager.LoadScene(22);
             aquasAffection++;
             Debug.Log("you win");
+
+            // Save the value of aquasAffection to PlayerPrefs
+            PlayerPrefs.SetInt("AquasAffection", aquasAffection);
+            PlayerPrefs.Save();
         }
     }
 
