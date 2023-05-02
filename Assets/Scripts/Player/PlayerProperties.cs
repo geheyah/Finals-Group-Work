@@ -22,7 +22,6 @@ public class PlayerProperties : MonoBehaviour
     void Awake()
     {
         instance = this;
-        PlayerPrefs.DeleteAll();
     }
 
     void Start()
