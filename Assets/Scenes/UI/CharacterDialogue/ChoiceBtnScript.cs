@@ -13,6 +13,9 @@ public class ChoiceBtnScript : MonoBehaviour
     {
         SceneManager.LoadScene(5);
     }
+
+//=====================================================================
+
     public void acceptFoliaChoice()
     {
         SceneManager.LoadScene(19);
@@ -21,4 +24,11 @@ public class ChoiceBtnScript : MonoBehaviour
     {
         SceneManager.LoadScene(3);
     }
+    public void foliaCompletionQuestBtn()
+    {
+        SceneManager.LoadScene(3); 
+    }
+
+//=====================================================================
 }
+

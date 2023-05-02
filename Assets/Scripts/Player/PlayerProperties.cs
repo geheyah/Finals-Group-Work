@@ -35,6 +35,7 @@ public class PlayerProperties : MonoBehaviour
         if (missingLeaves >= 5 && questAccepted == true && !foliaAffectionIncreased)
         {
             foliaAffection++;
+            SceneManager.LoadScene(3);
             foliaAffectionIncreased = true;
         }
 
@@ -42,10 +43,6 @@ public class PlayerProperties : MonoBehaviour
         {
             sataniaAffection++;
             sataniaAffectionIncreased = true;
-        }
-        if(missingLeaves == 5)
-        {
-            SceneManager.LoadScene(3);
         }
     }
 

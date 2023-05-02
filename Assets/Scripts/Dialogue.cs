@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Dialogue : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Dialogue : MonoBehaviour
 
     public TextMeshProUGUI Yes;
     public TextMeshProUGUI No;
+    public TextMeshProUGUI goBackBtn;
 
     void Start()
     {
@@ -23,6 +25,7 @@ public class Dialogue : MonoBehaviour
 
         No.gameObject.SetActive(false);
         Yes.gameObject.SetActive(false);
+        goBackBtn.gameObject.SetActive(false);
     }
 
     void Update()
@@ -76,9 +79,10 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
             No.gameObject.SetActive(true);
             Yes.gameObject.SetActive(true);
+            goBackBtn.gameObject.SetActive(true);
+            gameObject.SetActive(false);
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
