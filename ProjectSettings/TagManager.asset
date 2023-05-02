@@ -10,6 +10,9 @@ TagManager:
   - note_3
   - note_4
   - Activator
+  - Wall
+  - Building
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -18,7 +21,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Building
   - 
   - 
   - 
@@ -46,4 +49,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 4150341723
     locked: 0

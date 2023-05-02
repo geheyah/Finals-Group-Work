@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NPC : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class NPC : MonoBehaviour
     public bool questAvailable; // Flag to indicate if a quest is available from the NPC
     public string questTitle; // The title of the quest
     public string questDescription; // The description of the quest
+    public static NPC instance;
 
     private bool isInRange = false; // Flag to indicate if the player is in range of the NPC
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
@@ -23,6 +24,15 @@ public class RythmGameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI healthText;
 
+    public Transform hitPosEffect1;
+    public Transform hitPosEffect2;
+    public Transform hitPosEffect3;
+    public Transform hitPosEffect4;
+
+    public GameObject hitEffect1;
+    public GameObject hitEffect2;
+    public GameObject hitEffect3;
+    public GameObject hitEffect4;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +40,7 @@ public class RythmGameManager : MonoBehaviour
         instance = this;
 
         scoreText.text = "Score: 0";
+        healthText.text = "Health: 10";
     }
 
     // Update is called once per frame
@@ -49,6 +60,31 @@ public class RythmGameManager : MonoBehaviour
     }
     public void noteHit()
     {
+
+        if (Random.Range(0f, 1f) < 0.20) // 0.20 chance on getting your health back 
+        {
+            playerHealth += 2;
+            healthText.text = "Health: " + playerHealth;
+
+            Debug.Log("add health");
+        }
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            Instantiate(hitEffect1, hitPosEffect1.position, Quaternion.identity);
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            Instantiate(hitEffect2, hitPosEffect2.position, Quaternion.identity);
+        }
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            Instantiate(hitEffect3, hitPosEffect3.position, Quaternion.identity);
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Instantiate(hitEffect4, hitPosEffect4.position, Quaternion.identity);
+        }
+
         currentScore += scorePerNote;
 
         scoreText.text = "Score: " + currentScore;
@@ -66,7 +102,9 @@ public class RythmGameManager : MonoBehaviour
         {
             Debug.Log("You Lose");
 
-            //transition to defeat screen and ask the player to replay or quit
+            startPlaying = false;
+            theMusic.Stop();
+            SceneManager.LoadScene(5);
         }
     }
 

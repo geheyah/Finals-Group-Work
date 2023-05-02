@@ -345,6 +345,8 @@ GameObject:
   - component: {fileID: 6216493187751594365}
   - component: {fileID: 6216493187751594364}
   - component: {fileID: 6216493187751594363}
+  - component: {fileID: 3055567099206305080}
+  - component: {fileID: 3775932521326433500}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -463,6 +465,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missingLeaves: 0
+  enemiesSlain: 0
+  foliaComplete: 0
+  satanaComplete: 0
+--- !u!114 &3055567099206305080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6216493187751594362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 599fa52c2388c6f44acb0d632281a298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+--- !u!114 &3775932521326433500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6216493187751594362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 146143068addfaa4db0e9be5e6c181f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 20
+  attackRange: 2
+  attackDelay: 1
+  knockbackForce: 100
+  attackEffect: {fileID: 0}
+  attackPoint: {fileID: 0}
 --- !u!1 &6216493188144602188
 GameObject:
   m_ObjectHideFlags: 0
