@@ -1,18 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static GameManager instance;
+
+    void Awake()
     {
-        
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        
+        LoadAffectionPoints();
     }
+
+    void LoadAffectionPoints()
+    {
+        PlayerProperties.instance.aquasAffection = PlayerPrefs.GetInt("AquasAffection", 0);
+        PlayerProperties.instance.foliaAffection = PlayerPrefs.GetInt("FoliaAffection", 0);
+        PlayerProperties.instance.sataniaAffection = PlayerPrefs.GetInt("SataniaAffection", 0);
+    }
+
+    // You can add other functions here to save or modify the affection points as well
 }

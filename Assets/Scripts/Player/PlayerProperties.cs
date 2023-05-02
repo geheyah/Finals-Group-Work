@@ -19,9 +19,21 @@ public class PlayerProperties : MonoBehaviour
     private bool foliaAffectionIncreased = false;
     private bool sataniaAffectionIncreased = false;
 
+    private const string AQUAS_AFFECTION_KEY = "AquasAffection";
+    private const string FOLIA_AFFECTION_KEY = "FoliaAffection";
+    private const string SATANIA_AFFECTION_KEY = "SataniaAffection";
+
     void Awake()
     {
         instance = this;
+    }
+
+    void Start()
+    {
+        // Load saved affection values from PlayerPrefs
+        aquasAffection = PlayerPrefs.GetInt(AQUAS_AFFECTION_KEY, 0);
+        foliaAffection = PlayerPrefs.GetInt(FOLIA_AFFECTION_KEY, 0);
+        sataniaAffection = PlayerPrefs.GetInt(SATANIA_AFFECTION_KEY, 0);
     }
 
     void Update()
@@ -35,6 +47,7 @@ public class PlayerProperties : MonoBehaviour
         if (missingLeaves >= 5 && questAccepted == true && !foliaAffectionIncreased)
         {
             foliaAffection++;
+            SaveAffectionValue(FOLIA_AFFECTION_KEY, foliaAffection);
             SceneManager.LoadScene("FoliaQuestCompleteScene");
             foliaAffectionIncreased = true;
         }
@@ -42,16 +55,18 @@ public class PlayerProperties : MonoBehaviour
         if (enemiesSlain >= 5 && questAccepted == true && !sataniaAffectionIncreased)
         {
             sataniaAffection++;
+            SaveAffectionValue(SATANIA_AFFECTION_KEY, sataniaAffection);
             sataniaAffectionIncreased = true;
             SceneManager.LoadScene("SatanaQuestCompleteScene");
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Activator")
         {
-           // SceneManager.LoadScene(22);
             aquasAffection++;
+            SaveAffectionValue(AQUAS_AFFECTION_KEY, aquasAffection);
             Debug.Log("you win");
         }
     }
@@ -70,5 +85,15 @@ public class PlayerProperties : MonoBehaviour
                 return 0;
         }
 
+    }
+
+    private void SaveAffectionValue(string key, int value)
+    {
+        PlayerPrefs.SetInt(key, value);
+        PlayerPrefs.Save();
+
+        PlayerPrefs.SetInt("AquasAffection", aquasAffection);
+        PlayerPrefs.SetInt("FoliaAffection", foliaAffection);
+        PlayerPrefs.SetInt("SataniaAffection", sataniaAffection);
     }
 }
