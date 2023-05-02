@@ -13,7 +13,7 @@ public class ChoiceBtnScript : MonoBehaviour
     }
     public void aquasCompletionQuestBtn()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene("AquasCompleteQuest");
     }
 
     //=====================================================================
