@@ -71,4 +71,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Folia/FoliaQuestDone.unity
     guid: 484ff9b4666aff649a0a58533f2cdc78
+  - enabled: 1
+    path: Assets/Scenes/UI/QuestCompleteDialogues/aquasQuestCompleteScene.unity
+    guid: 475c4989512c2334fa375c3dbbc4b538
   m_configObjects: {}
