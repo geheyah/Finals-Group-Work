@@ -6,6 +6,7 @@ public class Playerprefreset : MonoBehaviour
 {
     private void Awake()
     {
+        //reset playerpref
         DontDestroyOnLoad(this.gameObject);
         PlayerPrefs.DeleteAll();
     }
